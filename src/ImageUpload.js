@@ -40,6 +40,11 @@ const ImageUpload = ({ username }) => {
           .getDownloadURL()
           .then((url) => {
             setUrl(url);
+            axios.post('/upload', {
+              caption: caption,
+              imageUrl: url,
+              username: username,
+          })
 
             // post image inside db
             db.collection("posts").add({
@@ -54,8 +59,7 @@ const ImageUpload = ({ username }) => {
             setImage(null);
           });
       }
-    );
-  };
+    )};
 
   return (
     <div className="imageupload">
