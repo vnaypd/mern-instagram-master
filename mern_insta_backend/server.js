@@ -27,6 +27,10 @@ mongoose.connection.once('open',()=>{
 
  //api routes
 app.get('/',(req,res)=>res.status(200).send('hello world'))
+app.post('/upload',(req,res)=>{
+    const body=req.body
+    res.status(201).send(body)
+})
 
  //listen
 
