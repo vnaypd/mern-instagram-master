@@ -31,7 +31,23 @@ mongoose.connect(connection_url,{
 
 mongoose.connection.once('open',()=>{
     console.log('DB connected bro enjoyy the app')
-    
+
+    const changeStream=mongoose.connection.collection('posts').watch()
+    changeStream.on('change',(change)=>{
+        console.log(change)
+        if(change.operationType==='insert'){
+            console.log('triggering pusher')
+            const postDetails=change.fullDocument
+            pusher.trigger('posts','inserted',{
+                user:postDetails.user,
+                caption:postDetails.caption,
+                image:postDetails.image
+            })
+        }else{
+            console.log('error triggering pusher try again')
+        }
+    })
+
 })
 
  //api routes

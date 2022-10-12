@@ -10,6 +10,7 @@
     "axios": "^1.1.2",
     "firebase": "^7.15.5",
     "image-file-to-base64-exif": "^1.0.3",
+    "pusher-js": "^7.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flip-move": "^3.0.4",
