@@ -65,7 +65,7 @@ const ImageUpload = ({ username }) => {
     <div className="imageupload">
       <progress className="imageupload__progress" value={progress} max="100" />
       <Input
-        placeholder="Enter a caption"
+        placeholder="Enter a captioooon"
         value={caption}
         onChange={(e) => setCaption(e.target.value)}
       />

@@ -9,6 +9,13 @@
 const app=express()
 const port=process.env.PORT || 9000
 
+const pusher = new Pusher({
+  appId: "1490883",
+  key: "fbfaa8a8a102ee48de0a",
+  secret: "b5fda15eda8295e46b1e",
+  cluster: "ap2",
+  useTLS: true
+});
 
  //middleware
 app.use(express.json())
@@ -23,7 +30,8 @@ mongoose.connect(connection_url,{
     })
 
 mongoose.connection.once('open',()=>{
-    console.log('DB connected bro enjoy the app')
+    console.log('DB connected bro enjoyy the app')
+    
 })
 
  //api routes
