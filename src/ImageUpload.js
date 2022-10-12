@@ -7,7 +7,7 @@ import axios from "./axios";
 
 const ImageUpload = ({ username }) => {
   const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
+  const [ setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
 
